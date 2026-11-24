@@ -1,0 +1,65 @@
+{
+  "protocol": {
+    "selection_windows": [
+      "2025-05-01",
+      "2025-06-01",
+      "2025-07-01",
+      "2025-08-01"
+    ],
+    "final_evaluation_window": "2025-09-01 through 2025-10-31",
+    "selection_metric": "mean all-row MAE",
+    "selected_model": "two_stage_squared",
+    "diagnostic_note": "Clean-label metrics use held-out targets and are diagnostic only."
+  },
+  "tuning_mean_all_row_metrics": [
+    {
+      "model": "linear_only",
+      "all_MAE": 110.2971,
+      "all_RMSE": 632.6487,
+      "all_MAPE": 4.8444,
+      "all_MedAPE": 2.2456,
+      "all_R2": 0.8275
+    },
+    {
+      "model": "two_stage_l1",
+      "all_MAE": 90.9741,
+      "all_RMSE": 629.7107,
+      "all_MAPE": 3.8052,
+      "all_MedAPE": 1.3602,
+      "all_R2": 0.8291
+    },
+    {
+      "model": "two_stage_squared",
+      "all_MAE": 90.6109,
+      "all_RMSE": 629.668,
+      "all_MAPE": 3.7924,
+      "all_MedAPE": 1.3513,
+      "all_R2": 0.8291
+    }
+  ],
+  "final_evaluation": {
+    "cut": "2025-09-01",
+    "test_end": "2025-10-31",
+    "model": "two_stage_squared",
+    "train_rows": 38477,
+    "test_rows": 9523,
+    "training_rows_retained": 37944,
+    "training_rows_flagged": 533,
+    "diagnostic_test_rows_flagged": 144,
+    "all_MAE": 91.31664192971697,
+    "all_RMSE": 630.0236581633378,
+    "all_MAPE": 4.024686597948909,
+    "all_MedAPE": 1.2933934761761352,
+    "all_R2": 0.8295586993883337,
+    "diagnostic_clean_MAE": 35.180536360205046,
+    "diagnostic_clean_RMSE": 50.83379308350259,
+    "diagnostic_clean_MAPE": 1.498094399083637,
+    "diagnostic_clean_MedAPE": 1.2758449002222334,
+    "diagnostic_clean_R2": 0.9986336981797812,
+    "baseline_all_MAE": 134.463941452601,
+    "baseline_all_RMSE": 638.0758396964923,
+    "baseline_all_MAPE": 6.149317903626512,
+    "baseline_all_MedAPE": 3.124439191524692,
+    "baseline_all_R2": 0.8251741192585966
+  }
+}

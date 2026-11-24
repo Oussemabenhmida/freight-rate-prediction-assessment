@@ -1,0 +1,11 @@
+0:00-0:20 - Introduce the task: predict rates for 12,000 future-dated loads using 48,000 labeled loads.
+
+0:20-0:50 - Describe the data: labeled dates are January through October; predictions are November and December. Mention missing weight and market index, negative weights, and unseen cities.
+
+0:50-1:20 - Explain validation: use four early rolling two-month windows to select candidates by all-row MAE, then reserve September-October as the locked final evaluation. Explain why a random split would leak same-day conditions.
+
+1:20-1:50 - Explain the model: a linear log-rate stage projects time trend and quarter-end effects; gradient boosting models the remaining nonlinear geography and load effects. Mention the all-row locked results: $91.32 MAE versus $134.46 baseline MAE.
+
+1:50-2:20 - Walk through the code: validate.py selects and evaluates, train_predict.py refits on all labeled data, score.py validates the output format and creates the chart.
+
+2:20-2:35 - Explain outputs and limits: all 12,000 predictions and 31 December rows pass the scorer. The hidden score is not available, and December uses same-date unlabeled batch market averages.
